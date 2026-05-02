@@ -23,7 +23,7 @@ Then enable/select it in `~/.hermes/config.yaml` and restart Hermes or the gatew
 
 ## Configuration
 
-See [`examples/config.example.yaml`](examples/config.example.yaml) for a self-contained example.
+See [`config.example.yaml`](config.example.yaml) for a self-contained example.
 
 Minimal shape:
 

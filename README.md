@@ -2,7 +2,7 @@
 
 Shareable plugins used with [Hermes Agent](https://github.com/NousResearch/hermes-agent).
 
-Each top-level directory is one self-contained plugin package. Plugin-specific docs and examples live inside that plugin directory, so the repository can grow without a shared `examples/` folder becoming ambiguous.
+Each top-level directory is one self-contained plugin package. Plugin-specific docs and example config live inside that plugin directory, so the repository can grow without a shared `examples/` folder becoming ambiguous.
 
 ## Plugins
 
