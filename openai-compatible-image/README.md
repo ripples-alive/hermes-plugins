@@ -16,12 +16,14 @@ Copy the plugin directory into your Hermes user plugins path:
 
 ```bash
 mkdir -p ~/.hermes/plugins/image_gen
-cp -R image_gen/openai-compatible-image ~/.hermes/plugins/image_gen/
+cp -R openai-compatible-image ~/.hermes/plugins/image_gen/
 ```
 
 Then enable/select it in `~/.hermes/config.yaml` and restart Hermes or the gateway.
 
 ## Configuration
+
+See [`examples/config.example.yaml`](examples/config.example.yaml) for a self-contained example.
 
 Minimal shape:
 
@@ -95,5 +97,5 @@ Session override state is stored under `$HERMES_HOME/state/image_preset_override
 ## Validation
 
 ```bash
-python3 -m py_compile image_gen/openai-compatible-image/__init__.py
+python3 -m py_compile openai-compatible-image/__init__.py
 ```

@@ -1,12 +1,31 @@
 # Hermes Plugins
 
-Community/shareable plugins used with [Hermes Agent](https://github.com/NousResearch/hermes-agent).
+Shareable plugins used with [Hermes Agent](https://github.com/NousResearch/hermes-agent).
+
+Each top-level directory is one self-contained plugin package. Plugin-specific docs and examples live inside that plugin directory, so the repository can grow without a shared `examples/` folder becoming ambiguous.
 
 ## Plugins
 
 | Plugin | Kind | Description |
 | --- | --- | --- |
-| [`image_gen/openai-compatible-image`](image_gen/openai-compatible-image/) | `backend` | Generic OpenAI-compatible image generation provider with config-driven presets and runtime preset switching. |
+| [`openai-compatible-image`](openai-compatible-image/) | `image_gen` backend | Generic OpenAI-compatible image generation provider with config-driven presets and runtime preset switching. |
+
+## Install convention
+
+Hermes currently loads user-installed image generation backends from:
+
+```text
+~/.hermes/plugins/image_gen/<plugin-name>/
+```
+
+So this repository keeps the public/shareable package flat at the repo root, while installation copies the package into Hermes' required runtime category path.
+
+Example:
+
+```bash
+mkdir -p ~/.hermes/plugins/image_gen
+cp -R openai-compatible-image ~/.hermes/plugins/image_gen/
+```
 
 ## Security
 
