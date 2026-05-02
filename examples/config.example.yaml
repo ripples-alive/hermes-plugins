@@ -1,0 +1,40 @@
+# Example Hermes config fragment for image_gen/openai-compatible-image.
+# Do not commit real API keys. Put secrets in ~/.hermes/.env instead.
+
+plugins:
+  enabled:
+    - image_gen/openai-compatible-image
+
+image_gen:
+  provider: openai-compatible-image
+  preset: fast
+  openai_compatible_image:
+    # Option A: configure directly. Prefer environment variables for secrets.
+    base_url: https://your-openai-compatible-provider.example/v1
+    api_key: ${OPENAI_COMPAT_IMAGE_API_KEY}
+
+    # Option B: reuse a custom provider by name.
+    # custom_provider: image-provider
+
+    timeout: 240
+    presets:
+      fast:
+        display: Fast / low-cost preset
+        model: provider/model-fast
+        sizes:
+          landscape: 1536x1024
+          portrait: 1024x1536
+          square: 1024x1024
+
+      high_quality:
+        display: Higher quality preset
+        model: provider/model-high-quality
+        size: 1024x1024
+        extra_body:
+          quality: high
+
+# Optional custom provider reused by image_gen.openai_compatible_image.custom_provider.
+custom_providers:
+  - name: image-provider
+    base_url: https://your-openai-compatible-provider.example/v1
+    api_key: ${OPENAI_COMPAT_IMAGE_API_KEY}

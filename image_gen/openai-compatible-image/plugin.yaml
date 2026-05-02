@@ -1,0 +1,5 @@
+name: openai-compatible-image
+version: "0.3.0"
+description: Generic OpenAI-compatible preset-driven image generation backend for Hermes image_gen.
+author: ripples-ai
+kind: backend
