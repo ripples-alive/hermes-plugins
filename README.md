@@ -10,17 +10,15 @@ Each top-level directory is one plugin package with its own README and example c
 | --- | --- | --- |
 | [`openai-compatible-image`](openai-compatible-image/) | `image_gen` backend | Generic OpenAI-compatible image generation provider with config-driven presets and runtime preset switching. |
 
-## Install convention
+## Install
 
-Hermes currently loads user-installed image generation backends from:
+Copy each plugin package into the Hermes runtime path for its plugin type. Image generation backends use:
 
 ```text
 ~/.hermes/plugins/image_gen/<plugin-name>/
 ```
 
-So this repository keeps the public/shareable package flat at the repo root, while installation copies the package into Hermes' required runtime category path.
-
-Example:
+For `openai-compatible-image`:
 
 ```bash
 mkdir -p ~/.hermes/plugins/image_gen

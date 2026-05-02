@@ -2,13 +2,13 @@
 
 A generic Hermes `image_gen` backend for third-party image generation services that expose an OpenAI-compatible `POST /images/generations` API.
 
-The plugin is intentionally provider-neutral:
+Features:
 
-- no vendor-specific name in the provider identity;
-- no hard-coded model, resolution, or quality defaults;
-- model/size routing is driven by named presets in `config.yaml`;
-- responses are requested as `b64_json` and saved locally, avoiding provider URL accessibility issues;
-- `/image_preset` can switch presets globally or for the current gateway session.
+- configurable base URL and API key;
+- named presets for model, size, and provider-specific request fields;
+- per-aspect model and size routing for landscape, portrait, and square images;
+- local file output from `b64_json` image responses;
+- `/image_preset` runtime preset switching.
 
 ## Install
 
